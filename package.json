@@ -1,0 +1,26 @@
+{
+  "name": "quodis-site",
+  "version": "1.0.0",
+  "description": "The static corporate site of Quodis, served under Quodis.com",
+  "author": "Leo Xavier <leo@quodis.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quodis/quodis-site"
+  },
+  "bugs": {
+    "email": "leo@quodis.com"
+  },
+  "private": true,
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-uglify": "~0.7.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-libsass": "~0.2.0",
+    "grunt-contrib-cssmin": "~0.11.0",
+    "grunt-include-replace": "~2.0.0",
+    "grunt-contrib-htmlmin": "~0.3.0",
+    "grunt-contrib-copy": "~0.7.0",
+    "grunt-image-embed": "~0.3.3"
+  }
+}

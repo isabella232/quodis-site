@@ -1,0 +1,298 @@
+$blue: #08f;
+$black: #333;
+
+$grid_base: 20px;
+$before_h1: $grid_base * 3;
+$after_h1: $grid_base * 2;
+
+$degrees: 4deg;
+
+@font-face {
+	font-family: 'f';
+	src: url('f.woff') format('woff');
+}
+
+body, html {
+	overflow-x: hidden;
+	width: 100%;
+}
+
+body {
+
+	// overflow-x: hidden;
+	margin: 0;
+
+	font-family: 'f', Arial;
+	font-size: 14px;
+	letter-spacing: .4px;
+
+	line-height: $grid_base;
+	text-align: center;
+
+	color: $black;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+}
+
+a {
+	color: $blue;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+p {
+	max-width: 280px;
+}
+h1, h2 {
+	text-transform: uppercase;
+	font-weight: normal;
+}
+h1,h2,p{
+	margin: 0 auto $grid_base;
+}
+
+h1 {
+
+	font-size: 20px;
+	margin-bottom: $after_h1;
+	position: relative;
+	z-index: 2;
+
+	&:after {
+		content: ' ';
+		display: block;
+		height: 1px;
+		background: $black;
+		width: 160px;
+		margin: 10px auto;
+	}
+}
+h2 {
+	font-size: 16px;
+}
+
+#cl p {
+	height: 160px;
+	background: url(../src/img/clients.png) no-repeat center;
+	background-size: auto 100%;
+	@media (min-width: 500px) {
+		height: 240px;
+		max-width: 360px;
+	}
+}
+article {
+	padding: $before_h1 0;
+	position: relative;
+	*:last-child {
+		margin-bottom: 0;
+	}
+}
+
+
+article:first-of-type {
+
+	background: $blue;
+	background: linear-gradient( -185deg, adjust-hue( $blue, -12), $blue );
+	color: white;
+
+	header {
+		width: 160px;
+		height: 40px;
+		background: url(../src/img/quodis.png) no-repeat center;
+		background-size: 100%;
+		text-indent: -300px;
+		overflow: hidden;
+		margin: 0 auto $after_h1;
+	}
+
+	p {
+		font-size: 16px;
+		line-height: 22px;
+	}
+}
+
+
+article:not(:first-of-type) {
+
+	background: linear-gradient( #FFFFFF 120px, #ECEFF1);
+
+	&:before,
+	&:after {
+
+		content: ' ';
+		display: block;
+		background: white;
+
+		width: 51%;
+		height: 100px;
+
+		position: absolute;
+		top: 0px;
+
+	}
+
+	&:before {
+
+		right: 50%;
+
+		-webkit-transform: rotate( $degrees ) skew( $degrees );
+		transform: rotate( $degrees ) skew( $degrees );
+
+		-webkit-transform-origin: bottom right;
+		transform-origin: bottom right;
+
+	}
+
+	&:after {
+
+		left: 50%;
+
+		-webkit-transform: rotate( -$degrees ) skew( -$degrees );
+		transform: rotate( -$degrees ) skew( -$degrees );
+
+		-webkit-transform-origin: bottom left;
+		transform-origin: bottom left;
+
+	}
+
+}
+
+
+article:last-of-type {
+
+	padding-bottom: $grid_base * 4;
+
+	@media (min-width: 768px) {
+		padding-bottom: $grid_base * 6;
+	}
+
+}
+
+img {
+	height: 200px;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+#w2, #w3, #w4 {
+
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -140px;
+
+}
+
+#w {
+
+	@media (min-width: 500px) {
+		img {
+			height: 300px;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+
+	ul {
+
+		position: relative;
+		margin: 0 0 $grid_base;
+
+		>li {
+
+			opacity: 0;
+			visibility: hidden;
+			z-index: 0;
+
+			-webkit-transform: scale(.75) translateY(90px);
+			transform: scale(.75) translateY(90px);
+
+			-webkit-transition: all .2s ease-out;
+			transition: all .2s ease-out;
+
+			&.active {
+
+				visibility: visible;
+				opacity: 1;
+				z-index: 10;
+
+				-webkit-transform: scale(1);
+				transform: scale(1);
+
+			}
+		}
+	}
+
+	ol {
+
+		margin: 0 0 25px; // Cheat
+		padding: 0;
+		list-style: none;
+		position: relative;
+
+		height: 200px;
+
+		@media (min-width: 500px) {
+			height: 300px;
+		}
+
+		> li {
+
+			opacity: 0;
+			z-index: 0;
+
+			-webkit-transform: scale(.95);
+			transform: scale(.95);
+
+			-webkit-transition: all .5s ease-in-out;
+			transition: all .5s ease-in-out;
+
+			position: absolute;
+			top: 0;
+			left: 50%;
+
+			margin-left: -140px;
+
+			@media (min-width: 500px) {
+				margin-left: -210px;
+			}
+
+			&.active {
+
+				opacity: 1;
+				z-index: 1;
+
+				-webkit-transform: scale(1);
+				transform: scale(1);
+			}
+		}
+
+	}
+
+}
+
+// Next Work link
+#nx {
+	position: relative;
+	z-index: 2;
+}
+
+#c {
+	li:first-of-type {
+		margin-bottom: 2 * $grid_base;
+	}
+	@media (min-width: 680px) {
+		li {
+			width: 280px;
+			margin: 0 20px;
+			display: inline-block;
+			margin-bottom: 0!important;
+		}
+	}
+}
