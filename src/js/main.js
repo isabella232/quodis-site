@@ -1,6 +1,8 @@
 var a = 1, // Active work
 al = 4, // Work length
-i = 0;
+i = 0,
+iOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent ),
+ii;
 
 // Query Selector
 function q(s) {
@@ -14,17 +16,35 @@ function n(e) {
 	if (a > al) a = 1;
 	q('#w'+a).className = 'active';
 
-	// Reset slider
-	clearInterval(ii);
-	ii = setInterval( ni, 2500 );
+	// Reset slider timer
+	nii();
 
 	if (e) e.preventDefault();
 }
-q('#nx').addEventListener("touchstart", n);
+
+if (iOS) {
+	q('#nx').addEventListener("touchstart", n);	
+}
+
+// Setup work image clicks
+var ol = document.querySelectorAll('#w ol');
+for ( var ol_i = ol.length-1; ol_i >= 0; ol_i-- ) {
+	if (iOS) {
+		ol[ol_i].addEventListener("touchstart", ni);
+	} else {
+		ol[ol_i].addEventListener("click", ni);
+	}
+}
+
+// Next image interval
+function nii() {
+	clearTimeout(ii);
+	ii = setTimeout( ni, 2500 );
+}
+
+nii();
 
 // Next image within work
-var ii = setInterval( ni, 2500 );
-
 function ni() {
 
 	// Count length
@@ -38,6 +58,8 @@ function ni() {
 	// Place class
 	q('#w' + a + ' .active').className = '';
 	ai[i].className = 'active';
+
+	nii();
 	
 }
 
