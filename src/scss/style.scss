@@ -5,7 +5,7 @@ $grid_base: 20px;
 $before_h1: $grid_base * 3;
 $after_h1: $grid_base * 2;
 
-$degrees: 4deg;
+$degrees: 3.5deg;
 
 @font-face {
 	font-family: 'f';
@@ -117,7 +117,7 @@ article:first-of-type {
 
 article:not(:first-of-type) {
 
-	background: linear-gradient( #FFFFFF 120px, #ECEFF1);
+	background: linear-gradient( #FFFFFF 120px, lighten( #ECEFF1, 1%) );
 
 	&:before,
 	&:after {
@@ -138,11 +138,11 @@ article:not(:first-of-type) {
 
 		right: 50%;
 
-		-webkit-transform: rotate( $degrees ) skew( $degrees );
-		transform: rotate( $degrees ) skew( $degrees );
-
 		-webkit-transform-origin: bottom right;
 		transform-origin: bottom right;
+
+		-webkit-transform: rotate( $degrees ) skew( $degrees );
+		transform: rotate( $degrees ) skew( $degrees );
 
 	}
 
@@ -150,11 +150,11 @@ article:not(:first-of-type) {
 
 		left: 50%;
 
-		-webkit-transform: rotate( -$degrees ) skew( -$degrees );
-		transform: rotate( -$degrees ) skew( -$degrees );
-
 		-webkit-transform-origin: bottom left;
 		transform-origin: bottom left;
+
+		-webkit-transform: rotate( -$degrees ) skew( -$degrees );
+		transform: rotate( -$degrees ) skew( -$degrees );
 
 	}
 
