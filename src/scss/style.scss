@@ -34,6 +34,10 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
+	@media (min-width: 500px) {
+		font-size: 16px;
+		line-height: $grid_base + 4;
+	}
 }
 
 a {
@@ -45,6 +49,9 @@ a {
 }
 p {
 	max-width: 280px;
+	@media (min-width: 500px) {
+		max-width: 480px;
+	}
 }
 h1, h2 {
 	text-transform: uppercase;
@@ -57,6 +64,9 @@ h1,h2,p{
 h1 {
 
 	font-size: 20px;
+	@media (min-width: 500px) {
+		font-size: 22px;
+	}
 	margin-bottom: $after_h1;
 	position: relative;
 	z-index: 2;
@@ -72,6 +82,9 @@ h1 {
 }
 h2 {
 	font-size: 16px;
+	@media (min-width: 500px) {
+		font-size: 18px;
+	}
 }
 
 #cl p {
@@ -104,11 +117,19 @@ article:first-of-type {
 		background: url(../src/img/quodis.png) no-repeat center;
 		background-size: 100%;
 		margin: 0 auto $after_h1;
+		@media (min-width: 500px) {
+			width: 200px;
+			height: 50px;
+		}
 	}
 
 	p {
 		font-size: 16px;
 		line-height: 22px;
+		@media (min-width: 500px) {
+			font-size: 18px;
+			line-height: 24px;
+		}
 	}
 }
 
@@ -184,7 +205,9 @@ ul {
 	top: 0;
 	left: 50%;
 	margin-left: -140px;
-
+	@media (min-width: 500px) {
+		margin-left: -240px;
+	}
 }
 
 #w {
@@ -242,6 +265,8 @@ ul {
 
 		> li {
 
+			cursor: pointer;
+			
 			opacity: 0;
 			z-index: 0;
 
@@ -279,6 +304,8 @@ ul {
 #nx {
 	position: relative;
 	z-index: 2;
+	text-transform: uppercase;
+	padding: 5px 15px;
 }
 
 #c {
