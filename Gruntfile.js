@@ -11,7 +11,7 @@ module.exports = function(grunt) {
 			},
 			css: {
 				files: [ 'src/scss/*.scss' ],
-				tasks: [ 'libsass', 'imageEmbed', 'cssmin', 'includereplace', 'htmlmin' ]
+				tasks: [ 'sass', 'imageEmbed', 'cssmin', 'includereplace', 'htmlmin' ]
 			},
 			html: {
 				files: [ 'src/*.html' ],
@@ -72,6 +72,7 @@ module.exports = function(grunt) {
 					src: [
 						'src/img/og.png',
 						'src/img/229.jpg',
+						'src/img/sn.png',
 						'src/img/lxjs.jpg',
 						'src/img/favicon.ico'
 					],
@@ -93,7 +94,7 @@ module.exports = function(grunt) {
 			}
 		},
 
-		libsass: {
+		sass: {
 			main: {
 					src: 'src/scss/style.scss',
 					dest: 'tmp/style.css'
@@ -113,17 +114,17 @@ module.exports = function(grunt) {
 	// Load the plugins
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-libsass');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-include-replace');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-image-embed');
+	grunt.loadNpmTasks('grunt-sass');
 
 	// Default tasks
 	grunt.registerTask('default', [
 		'uglify',
-		'libsass',
+		'sass',
 		'imageEmbed',
 		'cssmin',
 		'includereplace',

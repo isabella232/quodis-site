@@ -102,7 +102,7 @@ h2 {
 article {
 	padding: $before_h1 0;
 	position: relative;
-	*:last-child {
+	>:last-child {
 		margin-bottom: 0;
 	}
 }
@@ -321,6 +321,7 @@ ul {
 			margin: 0 20px;
 			display: inline-block;
 			margin-bottom: 0!important;
+			vertical-align: top;
 		}
 	}
 }
